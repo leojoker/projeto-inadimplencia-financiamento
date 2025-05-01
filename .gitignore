@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+.ipynb_checkpoints/
+.cache/
+*.log
+
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook metadata and checkpoint
+.ipynb_checkpoints
+
+# VSCode
+.vscode/
+
+# Data files
+data/raw/
+data/processed/
+data/final/
+
+# Model files
+*.pkl
+models/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Pytest cache
+.pytest_cache/
