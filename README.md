@@ -1,79 +1,101 @@
-# Projeto de Previsão de Inadimplência
+# 📊 Projeto de Previsão de Inadimplência em Financiamentos
 
-Este projeto tem como objetivo desenvolver uma pipeline completa de ciência de dados para prever inadimplência de contratos financeiros. O modelo é baseado em dados reais extraídos de um sistema e utiliza técnicas de engenharia de atributos, normalização e machine learning.
+[![Python](https://img.shields.io/badge/Python-3.13-blue)](https://www.python.org)
+[![Licença MIT](https://img.shields.io/badge/Licença-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)]()
+
+Este projeto implementa uma pipeline completa de Ciência de Dados com foco na previsão de inadimplência em financiamentos. A solução é estruturada de ponta a ponta: desde a extração dos dados até a geração das previsões e integração com o banco de dados.
 
 ---
 
-## 🔍 Estrutura do Projeto
+## 🚀 Tecnologias Utilizadas
+
+- Python 3.13
+- Pandas, NumPy, Scikit-learn, Seaborn, Matplotlib
+- SQL Server com PyODBC
+- Jupyter Notebooks
+- Joblib
+- SMOTE (balanceamento)
+- Git + GitHub
+
+---
+
+## 🧱 Estrutura do Projeto
 
 ```
 PROJETO_INADIMPLENCIA/
-├── app/                            # Script principal da pipeline
-│   └── gerar_previsoes_inadimplencia.py
-├── data/                           # Diretórios para armazenamento de dados
-│   ├── raw/                        # Dados brutos
-│   ├── processed/                 # Dados tratados
-│   └── final/                     # Resultados finais
-├── models/                         # Modelos treinados (.pkl)
-├── notebooks/                      # Análises e desenvolvimento exploratório
+├── notebooks/                  # Jupyter Notebooks com cada etapa da pipeline
 │   ├── 01_Exploracao.ipynb
 │   ├── 02_Preprocessamento.ipynb
-│   ├── 03_Treinamento_Modelo.ipynb
-│   ├── 04_Avaliacao_Modelo.ipynb
+│   ├── 03_04_Treinamento_Avaliacao_Modelo.ipynb
 │   └── 05_Deploy_Pipeline.ipynb
-├── src/                            # Código modular reutilizável
+├── src/                        # Módulos Python reutilizáveis
 │   ├── data_loader.py
 │   ├── preprocessing.py
 │   ├── model_trainer.py
 │   ├── predictor.py
 │   └── sql_utils.py
-├── tests/                          # Testes automatizados (em desenvolvimento)
-│   └── test_model.py
-├── requirements.txt                # Bibliotecas necessárias
-└── README.md                       # Este arquivo
+├── app/                        # Script de execução da pipeline
+│   └── gerar_previsoes_inadimplencia.py
+├── data/                       # Dados locais organizados
+│   ├── raw/
+│   ├── processed/
+│   └── final/
+├── models/                     # Modelos treinados (.pkl)
+├── tests/                      # Testes automatizados
+├── requirements.txt            # Dependências do projeto
+├── .gitignore                  # Arquivos ignorados pelo Git
+└── README.md                   # Este documento
 ```
 
 ---
 
-## ⚙️ Etapas da Pipeline
+## 🔎 Pipeline de Desenvolvimento
 
-1. **Exploração de Dados:** visualização e entendimento dos dados.
-2. **Pré-processamento:** criação de variáveis derivadas, tratamento e normalização.
-3. **Treinamento do Modelo:** uso de Random Forest para aprendizado supervisionado.
-4. **Avaliação:** métricas como Acurácia, Precisão, Recall e F1-Score.
-5. **Deploy e Integração:** inserção das previsões no banco de dados SQL Server.
+1. **Exploração de Dados** – Visualização, limpeza inicial e estatísticas descritivas.
+2. **Pré-processamento** – Feature engineering, encoding, e preparação.
+3. **Treinamento** – Modelo RandomForest balanceado com SMOTE.
+4. **Avaliação** – Métricas de performance e importância das variáveis.
+5. **Deploy** – Geração de previsões e inserção no banco SQL Server.
 
 ---
 
-## 🚀 Como Executar
+## 📈 Resultados Esperados
 
-1. Instale os pacotes necessários:
+- Classificador com alta acurácia na identificação de contratos inadimplentes.
+- Modelo exportado em `.pkl` e integrado com pipeline de banco de dados.
+- Gráficos e análises de suporte para tomada de decisão.
+
+---
+
+## 🧪 Como Executar Localmente
+
 ```bash
+# 1. Clonar o repositório
+git clone https://github.com/leojoker/projeto-inadimplencia-financiamento.git
+cd projeto-inadimplencia-financiamento
+
+# 2. Criar ambiente virtual
+python -m venv venv
+source venv/bin/activate  # ou venv\Scripts\activate no Windows
+
+# 3. Instalar dependências
 pip install -r requirements.txt
-```
 
-2. Execute a pipeline:
-```bash
+# 4. Executar o script principal (ou use os notebooks)
 python app/gerar_previsoes_inadimplencia.py
 ```
 
 ---
 
-## 🧠 Modelo
+## 🧠 Autor
 
-- Algoritmo: `RandomForestClassifier`
-- Normalização: `MinMaxScaler`
-- Codificação: `LabelEncoder`
-- Armazenamento de modelo: `joblib`
-
----
-
-## 💾 Banco de Dados
-
-O projeto se conecta a um banco SQL Server via `pyodbc` para extrair dados e armazenar previsões.
+**Leonardo Barbosa**  
+Cientista de Dados | Projetos em Finanças, Inteligência de Negócios e Machine Learning  
+📫 [linkedin.com/in/leonardo-barbosa](https://www.linkedin.com/in/leonardo-barbosa777/)
 
 ---
 
-## ✍️ Autor
+## 📄 Licença
 
-Desenvolvido por Leonardo Barbosa — Cientista de Dados com foco em projetos aplicados à área financeira e Futebol.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
