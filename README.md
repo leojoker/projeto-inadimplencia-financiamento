@@ -19,33 +19,52 @@ Este projeto implementa uma pipeline completa de Ciência de Dados com foco na p
 - Git + GitHub
 
 ---
+## 🖼️ Visualização do Dashboard
+
+<img src="images/img_dash.png" alt="Dashboard Power BI" width="100%">
+
+
+Acesse o dashboard completo no Power BI com análises visuais da inadimplência:
+
+👉 [Clique aqui para visualizar o dashboard no Power BI](https://app.powerbi.com/view?r=eyJrIjoiMTk0ZDVmMDEtZGQxYS00MjVkLTgxODktNGY2ZDdmZjhjZWQwIiwidCI6IjI3MTA1ZGYzLTBhYmItNGMyMy05NmQyLTk2N2FiMmEyNmQ5YSJ9)
+
+---
+
 
 ## 🧱 Estrutura do Projeto
 
 ```
-PROJETO_INADIMPLENCIA/
-├── notebooks/                  # Jupyter Notebooks com cada etapa da pipeline
-│   ├── 01_Exploracao.ipynb
-│   ├── 02_Preprocessamento.ipynb
-│   ├── 03_04_Treinamento_Avaliacao_Modelo.ipynb
-│   └── 05_Deploy_Pipeline.ipynb
-├── src/                        # Módulos Python reutilizáveis
-│   ├── data_loader.py
-│   ├── preprocessing.py
-│   ├── model_trainer.py
-│   ├── predictor.py
-│   └── sql_utils.py
-├── app/                        # Script de execução da pipeline
-│   └── gerar_previsoes_inadimplencia.py
-├── data/                       # Dados locais organizados
-│   ├── raw/
-│   ├── processed/
-│   └── final/
-├── models/                     # Modelos treinados (.pkl)
-├── tests/                      # Testes automatizados
-├── requirements.txt            # Dependências do projeto
-├── .gitignore                  # Arquivos ignorados pelo Git
-└── README.md                   # Este documento
+projeto-inadimplencia-financiamento/
+├── app/ # Script para gerar previsões
+│ └── gerar_previsoes_inadimplencia.py
+├── data/ # Bases de dados utilizadas
+│ ├── final/
+│ │ ├── df_original_com_probabilidades.xlsx
+│ ├── processed/
+│ │ ├── df_dados_pt_2.xlsx
+│ │ ├── df_original_pt_1.xlsx
+│ │ └── modelo_treinado.pk
+│ └── raw/
+├── images/ # Imagens para o projeto
+│ └── img_dash.png
+├── models/ # Modelos salvos (em construção)
+├── notebooks/ # Análises e pipeline
+│ ├── 01_Exploracao.ipynb
+│ ├── 02_Preprocessamento.ipynb
+│ ├── 03_04_Treinamento_Avaliacao_Modelo.ipynb
+│ └── 05_Deploy_Pipeline.ipynb
+├── src/ # Scripts fonte
+│ ├── init.py
+│ ├── data_loader.py
+│ ├── model_trainer.py
+│ ├── predictor.py
+│ ├── preprocessing.py
+│ └── sql_utils.py
+├── tests/ # Testes automatizados
+│ └── test_model.py
+├── LICENSE
+├── README.md
+└── requirements.txt
 ```
 
 ---
